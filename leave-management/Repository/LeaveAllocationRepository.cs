@@ -33,10 +33,16 @@ namespace leave_management.Repository
             return leaveAllocation;
         }
 
-        public LeaveAllocation FindBtId(int id)
+        public LeaveAllocation FindById(int id)
         {
             var leaveAllocation = _db.LeaveAllocations.Find(id);
             return leaveAllocation;
+        }
+
+        public bool isExists(int id)
+        {
+            var exists = _db.LeaveAllocations.Any(q => q.Id == id);
+            return exists;
         }
 
         public bool Save()

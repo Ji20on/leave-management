@@ -35,7 +35,7 @@ namespace leave_management.Repository
             return leaveTypes;
         }
 
-        public LeaveType FindBtId(int id)
+        public LeaveType FindById(int id)
         {
             var leaveType = _db.LeaveTypes.Find(id);
     
@@ -45,6 +45,12 @@ namespace leave_management.Repository
         public ICollection<LeaveType> GetEmployeesByLeaveType(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public bool isExists(int id)
+        {
+           var exists = _db.LeaveTypes.Any(q => q.Id == id);
+           return exists;
         }
 
         public bool Save()
