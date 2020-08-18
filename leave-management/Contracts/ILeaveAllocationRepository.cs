@@ -10,6 +10,8 @@ namespace leave_management.Contracts
     {
         bool CheckAllocation(int leavetypeId, string employeeid);
 
-        ICollection<LeaveAllocation> GetLeaveAllocationsByEmployee(string id);
+        ICollection<LeaveAllocation> GetLeaveAllocationsByEmployee(string employeeid);
+
+        LeaveAllocation GetLeaveAllocationsByEmployeeAndType(string employeeid, int leavetypeid);
     }
 }
